@@ -115,7 +115,7 @@ function QRScanner({ onResult, onCancel }) {
             const codes = await detector.detect(videoRef.current);
             if (codes.length && codes[0].rawValue) { resultRef.current(codes[0].rawValue); return; }
           } catch {}
-          timer = setTimeout(scan, 350);
+          timer = setTimeout(scan, 200);
         };
         scan();
       } catch {

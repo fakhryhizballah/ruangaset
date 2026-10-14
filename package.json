@@ -1,0 +1,21 @@
+{
+  "name": "ruangaset-production",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RuangAset full-stack asset tracking application",
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c green,blue \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "dev:api": "npm --workspace backend run dev",
+    "dev:web": "npm --workspace frontend run dev",
+    "build": "npm --workspace frontend run build",
+    "start": "concurrently -n api,web -c green,blue \"npm run start --workspace backend\" \"npm run start --workspace frontend\"",
+    "seed:admin": "npm --workspace backend run seed:admin",
+    "setup:env": "npm --workspace backend run setup:env",
+    "db:indexes": "npm --workspace backend run db:indexes"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": { "node": ">=24.0.0" }
+}

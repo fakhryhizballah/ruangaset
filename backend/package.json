@@ -1,0 +1,29 @@
+{
+  "name": "ruangaset-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "seed:admin": "node scripts/seed-admin.js",
+    "db:indexes": "node scripts/ensure-indexes.js",
+    "setup:env": "node scripts/setup-env.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/config/env.js && node --check src/config/db.js && node --check src/middleware/auth.js && node --check src/middleware/errorHandler.js && node --check src/routes/auth.js && node --check src/routes/assets.js && node --check src/routes/locations.js && node --check src/routes/assetTypes.js && node --check src/routes/dashboard.js && node --check src/routes/users.js && node --check scripts/seed-admin.js && node --check scripts/setup-env.js && node --check scripts/ensure-indexes.js && node --check test/utils.test.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "exceljs": "^4.4.0",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.9.3",
+    "zod": "^4.1.12"
+  }
+}
